@@ -1,87 +1,203 @@
-/* Сброс и базовые настройки */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
-               Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 body {
-  width: 100vw;
-  height: 100vh;
-  background: linear-gradient(135deg, #09203f 0%, #537895 100%);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans",
+    Helvetica, Arial, sans-serif;
+  background-color: #010409;
+  color: #f0f6fc;
+  line-height: 1.5;
+  min-height: 100vh;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  color: #fff;
-}
-
-/* Контейнер для центрирования */
-.download-container {
-  width: 100%;
-  max-width: 400px;
-  padding: 0 16px;
-}
-
-/* Собственно карточка */
-.download-box {
+  flex-direction: column;
   position: relative;
-  background-color: rgba(20, 40, 70, 0.7);
-  backdrop-filter: blur(12px);
-  border-radius: 16px;
-  padding: 30px;
-  text-align: center;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
-/* Иконка сверху */
-.download-icon {
-  width: 48px;
-  height: 48px;
-  margin: 0 auto 20px;
-  background-color: rgba(255, 255, 255, 0.1);
-  border-radius: 50%;
+.github-header {
+  background-color: #010409;
+  border-bottom: 1px solid #21262d;
+  padding: 16px 0;
+  width: 100%;
+}
+
+.header-content {
   display: flex;
-  justify-content: center;
   align-items: center;
+  gap: 16px;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 24px;
 }
 
-/* Заголовок */
+.github-logo {
+  width: 32px;
+  height: 32px;
+  fill: #f0f6fc;
+}
+
+.header-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #f0f6fc;
+}
+
+.main-content {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 24px;
+}
+
+.download-container {
+  background-color: #0c1015;
+  border: 1px solid #21262d;
+  border-radius: 12px;
+  padding: 40px;
+  width: 100%;
+  max-width: 480px;
+  box-shadow: 0 16px 32px rgba(1, 4, 9, 0.85);
+  text-align: center;
+  position: relative;
+}
+
 h1 {
   font-size: 24px;
-  font-weight: 700;
-  margin-bottom: 16px;
+  font-weight: 600;
+  margin-bottom: 25px;
+  color: #f0f6fc;
 }
 
-/* Текст статуса */
-#loader-text {
-  font-size: 16px;
-  opacity: 0.9;
-  margin-bottom: 12px;
+.loading-container {
+  margin-top: 32px;
+  text-align: center;
 }
 
-/* Текст ошибки */
-.error-text {
-  font-size: 14px;
-  color: #ff8080;
-  min-height: 1.2em; /* чтобы не прыгал layout */
+.spinner-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
 }
 
-/* Адаптив */
-@media (max-width: 480px) {
-  .download-box {
-    padding: 20px;
+.spinner {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #30363d;
+  border-top: 2px solid #58a6ff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-right: 12px;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
   }
-  h1 {
-    font-size: 20px;
+  100% {
+    transform: rotate(360deg);
   }
-  #loader-text, .error-text {
-    font-size: 14px;
+}
+
+.github-footer {
+  background-color: #010409;
+  border-top: 1px solid #21262d;
+  padding: 24px;
+  margin-top: auto;
+  width: 100%;
+}
+
+.footer-bottom {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.footer-logo-section {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.footer-logo {
+  width: 24px;
+  height: 24px;
+  fill: #6e7681;
+}
+
+.footer-copyright {
+  color: #6e7681;
+  font-size: 12px;
+}
+
+.footer-links {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.footer-links a,
+button {
+  color: #8b949e;
+  text-decoration: none;
+  font-size: 12px;
+}
+
+.footer-links a:hover,
+button:hover {
+  color: #58a6ff;
+}
+
+.page-wrapper {
+  min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-content {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.github-style-button {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans",
+    Helvetica, Arial, sans-serif;
+  background-color: transparent;
+  border: 0;
+  padding: 0;
+  text-align: left;
+  cursor: pointer;
+  display: inline-block;
+  transition: color 0.2s ease-in-out;
+}
+
+@media (max-width: 640px) {
+  .download-container {
+    margin: 100px 16px 16px;
+    padding: 24px;
   }
-  .download-icon {
-    width: 40px;
-    height: 40px;
-    margin-bottom: 16px;
+
+  .header-content {
+    padding: 0 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .footer-links {
+    gap: 16px;
   }
 }
